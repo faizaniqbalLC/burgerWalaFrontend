@@ -3,12 +3,13 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { FiShoppingCart, FiLogIn } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-const Header = ({ isAuthenticated = false }) => {
+import { motion } from "framer-motion";
+const Header = ({ isAuthenticated = true }) => {
   return (
     <nav>
-      <div>
+      <motion.div initial={{ x: "-100%" }} whileInView={{ x: 0 }}>
         <IoFastFoodOutline />{" "}
-      </div>
+      </motion.div>
       <div>
         <Link to="/">Home</Link>
         <Link to="/contact">Contact</Link>

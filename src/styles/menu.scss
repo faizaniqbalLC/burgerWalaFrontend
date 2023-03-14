@@ -2,7 +2,7 @@
 
 #menu {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: white;
   padding: 4rem;
 
@@ -11,16 +11,19 @@
     text-align: center;
     padding: 2rem;
   }
+
   > div {
     display: flex;
     justify-content: space-evenly;
   }
 }
+
 .menucard {
   background-color: white;
   width: 30%;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.495);
+
   > div {
     border-radius: 20px 20px 0 0;
     background-color: $red;
@@ -30,24 +33,28 @@
     color: white;
     height: 4rem;
   }
+
   > main {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     > img {
       height: 15rem;
       width: 100%;
       object-fit: contain;
     }
+
     > h5 {
       font-size: 1.8rem;
     }
     > p {
-      letter-spacing: 2px;
       text-transform: uppercase;
+      letter-spacing: 2px;
       padding: 1rem 0;
     }
+
     > button {
       background-color: $red;
       color: white;
@@ -56,16 +63,19 @@
       width: 100%;
       border-radius: 10px;
       cursor: pointer;
+
       &:hover {
         background-color: $reddark;
       }
     }
   }
 }
+
 @media screen and (max-width: 600px) {
-  #menu {
+  #menu > div {
     flex-direction: column;
   }
+
   .menucard {
     width: 100%;
     margin: 1rem 0;

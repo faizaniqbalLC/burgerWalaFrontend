@@ -1,0 +1,28 @@
+@import "color";
+
+nav {
+  height: 5rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.229);
+  background-color: white;
+  > div {
+    display: flex;
+    align-items: center;
+    > svg {
+      color: $red;
+      font-size: 3rem;
+    }
+    > a {
+      margin: 0 2rem;
+      color: $dark;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $lightdark;
+      }
+    }
+  }
+}

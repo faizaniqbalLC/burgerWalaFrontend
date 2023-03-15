@@ -1,0 +1,55 @@
+@import "color";
+
+.contact {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 2rem;
+    width: 40%;
+    height: 80%;
+    justify-content: center;
+    > h2 {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-family: "Roboto";
+      margin: 2rem 0;
+    }
+    > input,
+    textarea,
+    button {
+      padding: 1rem;
+      outline: none;
+      border: 1px solid rgba(202, 202, 202);
+      margin: 0.5rem;
+      width: 60%;
+      border-radius: 5px;
+    }
+
+    > button {
+      background-color: $red;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-size: 1rem;
+      &:hover {
+        background-color: $reddark;
+      }
+    }
+  }
+  .formBorder {
+    width: 200px;
+    height: 80%;
+    background-color: white;
+    border-radius: 0 200px 200px 0;
+  }
+}

@@ -14,6 +14,9 @@ import OrderDetails from "./components/myOrders/OrderDetails";
 import Dashboard from "./components/admin/Dashboard";
 import Users from "./components/admin/Users";
 import Orders from "./components/admin/Orders";
+import About from "./components/about/About";
+import Loader from "./components/layouts/Loader.jsx";
+import NotFound from "./components/layouts/NotFound.jsx";
 
 import "./styles/app.scss";
 import "./styles/header.scss";
@@ -32,6 +35,7 @@ import "./styles/myorder.scss";
 import "./styles/table.scss";
 import "./styles/orderDetails.scss";
 import "./styles/dashboard.scss";
+import "./styles/about.scss";
 function App() {
   return (
     <Router>
@@ -50,6 +54,9 @@ function App() {
         <Route path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/admin/users" element={<Users />} />
         <Route path="/admin/orders" element={<Orders />} />
+        <Route path="/about" element={<About />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

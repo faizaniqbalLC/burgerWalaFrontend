@@ -28,3 +28,9 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .founder > div > p {
+    line-height: 150%;
+  }
+}

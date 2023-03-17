@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJs, Tooltip, ArcElement, Legend } from "chart.js";
-ChartJs.register(Tooltip, ArcElement, Legend);
+import { Chart as ChartJS, Tooltip, ArcElement, Legend } from "chart.js";
+import Loader from "../layouts/Loader";
+
+ChartJS.register(Tooltip, ArcElement, Legend);
+
+const loading = false;
+
 const Box = ({ title, value }) => (
   <div>
-    <h3 style={{ fontSize: title === "Income" && "1.5rem" }}>
-      {title === "Income" && "Rs:"}
+    <h3>
+      {title === "Income" && "₹"}
       {value}
     </h3>
     <p>{title}</p>
@@ -18,7 +23,7 @@ const Dashboard = () => {
     labels: ["Preparing", "Shipped", "Delivered"],
     datasets: [
       {
-        label: "# of Orders",
+        label: "# of orders",
         data: [2, 3, 4],
         backgroundColor: [
           "rgba(159,63,176,0.1)",
@@ -32,24 +37,28 @@ const Dashboard = () => {
   };
   return (
     <section className="dashboard">
-      <main>
-        <article>
-          <Box title="Users" value={213} />
-          <Box title="Orders" value={23} />
-          <Box title="Income" value={2133} />
-        </article>
+      {loading === false ? (
+        <main>
+          <article>
+            <Box title="Users" value={213} />
+            <Box title="Orders" value={23} />
+            <Box title="Income" value={21323} />
+          </article>
 
-        <section>
-          <div>
-            <Link to="/admin/orders">View Orders</Link>
-            <Link to="/admin/users">View Users</Link>
-          </div>
+          <section>
+            <div>
+              <Link to="/admin/orders">View Orders</Link>
+              <Link to="/admin/users">View Users</Link>
+            </div>
 
-          <aside>
-            <Doughnut data={data} />
-          </aside>
-        </section>
-      </main>
+            <aside>
+              <Doughnut data={data} />
+            </aside>
+          </section>
+        </main>
+      ) : (
+        <Loader />
+      )}
     </section>
   );
 };

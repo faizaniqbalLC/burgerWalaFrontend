@@ -1,7 +1,7 @@
 {
   "name": "burgerwala",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "this is my project without cs degree burger wala.",
   "scripts": {

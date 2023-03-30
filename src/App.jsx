@@ -43,10 +43,14 @@ import "./styles/about.scss";
 import toast, { Toaster } from "react-hot-toast";
 function App() {
   const dispatch = useDispatch();
-  const { error, message } = useSelector((state) => state.auth);
-  // useEffect(() => {
-  //   dispatch(loadUser());
-  // }, [dispatch]);
+  const { error, message, isAuthenticated } = useSelector((state) => {
+    console.log(state.auth);
+
+    return state.auth;
+  });
+  useEffect(() => {
+    dispatch(loadUser());
+  }, [dispatch]);
 
   useEffect(() => {
     console.log(error);
@@ -63,7 +67,9 @@ function App() {
       });
     }
   }, [error, message]);
-  const isAuthenticated = false;
+  useEffect(() => {
+    console.log(isAuthenticated);
+  }, [isAuthenticated]);
   return (
     <Router>
       <Header isAuthenticated={isAuthenticated} />

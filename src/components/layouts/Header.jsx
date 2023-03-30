@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { FiShoppingCart, FiLogIn } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-const Header = ({ isAuthenticated = true }) => {
+const Header = ({ isAuthenticated = false }) => {
+  useEffect(() => {
+    console.log(isAuthenticated);
+  }, [isAuthenticated]);
   return (
     <nav>
       <motion.div initial={{ x: "-100%" }} whileInView={{ x: 0 }}>
